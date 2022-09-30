@@ -28,7 +28,7 @@ export class FilmsService {
   async findSwapiAll() {
     const result = await this.httpService.axiosRef
       .get(
-        'https://swapi.py4e.com/api/films/'
+        process.env.API_STARWARS,
       )
       .then((res) => {
         return res.data;

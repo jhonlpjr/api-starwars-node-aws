@@ -3,9 +3,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { FilmsModule } from './modules/films/films.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [TypeOrmModule.forRoot({
+  imports: [ConfigModule.forRoot({
+    isGlobal: true,
+  }),
+  TypeOrmModule.forRoot({
     type: 'mysql',
     host: 'starwars.cpdbzkmi5jsm.us-east-1.rds.amazonaws.com',
     port: 3306,
