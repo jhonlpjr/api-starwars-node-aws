@@ -75,4 +75,4 @@ $ npm run test
 
 ## License
 
-Esta Api es [Jonsnow](LICENSE).
+Esta Api es de [Jonsnow](LICENSE).
