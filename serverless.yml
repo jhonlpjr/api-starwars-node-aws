@@ -1,0 +1,37 @@
+# service: starwars-api
+
+# frameworkVersion: '3'
+
+# plugins:
+#  - serverless-jetpack
+
+# provider:
+#   name: aws
+#   runtime: nodejs14.x
+#   region: us-east-1 # or whatever your region is
+
+# functions:
+#   main:
+#     handler: dist/main.handler
+#     events:
+#       - http:
+#           method: any
+#           path: /{proxy+}
+
+#FOR SERVERLES OFFLINE
+ service: serverless-offline
+ plugins:
+   - serverless-offline
+ provider:
+   name: aws
+   runtime: nodejs14.x
+ functions:
+   main:
+     handler: dist/main.handler
+     events:
+       - http:
+           method: ANY
+           path: /
+       - http:
+           method: ANY
+           path: '{proxy+}'
