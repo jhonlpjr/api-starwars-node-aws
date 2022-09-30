@@ -11,12 +11,12 @@ Se configurarán las credenciales de la base de datos en el archivo: .env, este 
 cruce o actualzazción de credenciales desde git, por lo que se usará de base el archivo: env. example.
 
 **Parametros de configuración:**
-***API_STARWARS=> *** Acá se coloca el url del API externo de Star Wars ***
-***DB_HOST=> *** Acá se coloca la dirección del host de la base de datos ***
-***DB_NAME=> *** Acá se coloca el nombre de la base datos ***
-***DB_PORT=> *** Acá se coloca el puerto de la base datos ***
-***DB_USER=> *** Acá se coloca el nombre de usario de la base datos ***
-***DB=PASS=> *** Acá se coloca el password del usario de la base datos ***
+***API_STARWARS=> *** Acá se coloca el url del API externo de Star Wars
+***DB_HOST=> *** Acá se coloca la dirección del host de la base de datos
+***DB_NAME=> *** Acá se coloca el nombre de la base datos
+***DB_PORT=> *** Acá se coloca el puerto de la base datos
+***DB_USER=> *** Acá se coloca el nombre de usario de la base datos
+***DB=PASS=> *** Acá se coloca el password del usario de la base datos
 
 ## Installation
 
