@@ -8,7 +8,7 @@ La API usa el framework serverless para despliegue como function lamba en AWS.
 ## Configuration
 
 Se configurarán las credenciales de la base de datos en el archivo: .env, este está incluido en el gitignore por posibles problemas de
-cruce o actualzazción de credenciales desde git, por lo que se usará de base el archivo: env. example.
+cruce o actualzación de credenciales desde git, por lo que se usará de base el archivo: env.example .
 
 **Parametros de configuración:**
 
@@ -33,6 +33,10 @@ $ npm install
 
 ## Running the app
 
+**Para Transpilar la solución:**
+```bash
+$ npm run build
+```
 **Para Desplegar la aplicación en servidor de AWS:**
 
 *Primer paso: tiene que tener cuenta en AWS, sus credenciales e instalado el AWS CLI y AWS SAM.*
@@ -44,21 +48,21 @@ $ npm install
 ```bash
 # production
 $ serverless deploy
-
-# development
-$ npx serverless offline
-
 ```
 
-**Por defecto esta para correr como function lambda de prueba como serverless offline**
+**Para Desplegar la aplicación en modo de prueba como serverless offline:**
 
+```bash
+# development
+$ npx serverless offline
+```
 ## Swagger
 
 **Para acceder al Swagger (Api Documentation)**
 
-*Acceder por navegador a la dirección url generada del API mas : /api*
+*Debe acceder  a la dirección url generada al desplegar, ubicarse en el puerto 8080  y añadir la ruta : /api*
 
-Ejemplo: (https://localhost/api)
+Ejemplo: (https://localhost:8080/api)
 
 *Ahí se podrá ver todos los endpoints, parámetros de uso y ejemplo de como se podrían usar.*
 ## Unit Test

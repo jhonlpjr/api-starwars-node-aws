@@ -1,37 +1,39 @@
-# service: starwars-api
-
-# frameworkVersion: '3'
-
-# plugins:
-#  - serverless-jetpack
-
-# provider:
-#   name: aws
-#   runtime: nodejs14.x
-#   region: us-east-1 # or whatever your region is
-
-# functions:
-#   main:
-#     handler: dist/main.handler
-#     events:
-#       - http:
-#           method: any
-#           path: /{proxy+}
-
-#FOR SERVERLES OFFLINE
- service: serverless-offline
+ service: starwars-api
+ frameworkVersion: '3'
+ package:
+   exclude:
+     - "*"
+     - "**/node_modules/aws-sdk/**" # included on Lambda.
+     - "!package.json"
  plugins:
+   - serverless-jetpack
    - serverless-offline
  provider:
    name: aws
-   runtime: nodejs14.x
+   runtime: nodejs16.x
+   region: us-east-1 # or whatever your region is
  functions:
    main:
-     handler: dist/main.handler
+     handler: dist/lambda.handler
      events:
        - http:
-           method: ANY
-           path: /
-       - http:
-           method: ANY
-           path: '{proxy+}'
+           method: any
+           path: /{proxy+}
+
+#FOR SERVERLES OFFLINE
+#  service: serverless-offline
+#  plugins:
+#    - serverless-offline
+#  provider:
+#    name: aws
+#    runtime: nodejs14.x
+#  functions:
+#    main:
+#      handler: dist/main.handler
+#      events:
+#        - http:
+#            method: ANY
+#            path: /
+#        - http:
+#            method: ANY
+#            path: '{proxy+}'
