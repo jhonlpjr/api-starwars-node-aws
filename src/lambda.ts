@@ -26,9 +26,9 @@ async function bootstrap(): Promise<Server> {
     .setVersion('1.0')
     .build();
 
-  //const custom = SwaggerCustomOptions();
+  const custom = SwaggerCustomOptions();
   const document = SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('api', app, document, custom);
 
   await app.listen(8080);
 
